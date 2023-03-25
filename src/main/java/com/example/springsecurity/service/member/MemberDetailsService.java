@@ -20,8 +20,10 @@ public class MemberDetailsService implements UserDetailsService {
                 MemberVO.builder()
                         .memberId(m.getMemberId())
                         .password(m.getPassword())
+
                         .memberAuth(m.getMemberAuth())
                         .registDate(m.getRegistDate()).build()
+
         ).get();
     }
 }

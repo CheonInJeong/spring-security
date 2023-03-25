@@ -16,9 +16,12 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final MemberDetailsService memberDetailsService;
     private final PasswordEncoder passwordEncoder;
+
     public String registerMember(MemberVO memberVO) {
 
+
         String encodedPassword = passwordEncoder.encode("{bcrypt}" + memberVO.getPassword());
+
         Member member = Member.builder()
                 .memberId(memberVO.getMemberId())
                 .memberAuth(memberVO.getMemberAuth())
