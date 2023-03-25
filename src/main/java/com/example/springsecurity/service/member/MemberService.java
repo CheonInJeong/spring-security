@@ -20,7 +20,7 @@ public class MemberService {
     public String registerMember(MemberVO memberVO) {
 
 
-        String encodedPassword = passwordEncoder.encode("{bcrypt}" + memberVO.getPassword());
+        String encodedPassword = passwordEncoder.encode(memberVO.getPassword());
 
         Member member = Member.builder()
                 .memberId(memberVO.getMemberId())
