@@ -19,6 +19,7 @@ public class MemberDetailsService implements UserDetailsService {
         return memberRepository.findById(memberId).map(m->
                 MemberVO.builder()
                         .memberId(m.getMemberId())
+                        .password(m.getPassword())
                         .memberAuth(m.getMemberAuth()).build()
         ).get();
     }
