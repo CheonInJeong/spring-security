@@ -18,11 +18,11 @@ public class MemberService {
     private final PasswordEncoder passwordEncoder;
     public String registerMember(MemberVO memberVO) {
 
-//        String encodedPassword = passwordEncoder.encode("{bcrypt}" + memberVO.getPassword());
+        String encodedPassword = passwordEncoder.encode("{bcrypt}" + memberVO.getPassword());
         Member member = Member.builder()
                 .memberId(memberVO.getMemberId())
                 .memberAuth(memberVO.getMemberAuth())
-                .password(memberVO.getPassword())
+                .password(encodedPassword)
                 .registDate(LocalDateTime.now())
                 .build();
         memberRepository.save(member);

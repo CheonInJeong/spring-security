@@ -19,7 +19,31 @@ public class MemberDetailsService implements UserDetailsService {
         return memberRepository.findById(memberId).map(m->
                 MemberVO.builder()
                         .memberId(m.getMemberId())
-                        .memberAuth(m.getMemberAuth()).build()
+                        .password(m.getPassword())
+                        .memberAuth(m.getMemberAuth())
+                        .registDate(m.getRegistDate()).build()
         ).get();
     }
 }
+
+
+
+/*
+    @Override
+    public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
+        User user = userRepository.findByUserId(userId);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not authorized...");
+        }
+
+        UserDetailVO userDto = new UserDetailVO();
+        userDto.setUserId(user.getUserId());
+        userDto.setUserPw(user.getUserPw());
+        userDto.setUserAuth(user.getUserAuth());
+        userDto.setUserName(user.getUserName());
+
+
+        log.info("UserDTO = {}", userDto);
+        return userDto;
+    }
+ */

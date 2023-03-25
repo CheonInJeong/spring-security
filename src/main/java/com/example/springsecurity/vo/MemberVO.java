@@ -10,9 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@ToString
-@Getter
-@Setter
+@Data
 @Builder
 @AllArgsConstructor
 public class MemberVO implements UserDetails {
@@ -32,6 +30,12 @@ public class MemberVO implements UserDetails {
     public String getUsername() {
         return this.memberId;
     }
+
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
 
     @Override
     public boolean isAccountNonExpired() {
