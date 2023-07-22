@@ -213,15 +213,13 @@ public class SFTPUtils {
 
             //sftp 채널 열기 및 접속
             channel = jschSession.openChannel("sftp");
-            channel.connect();
+            channelSftp = (ChannelSftp) channel;
+            channelSftp.connect();
 
         } catch (JSchException e) {
             e.printStackTrace();
             log.error("SFTP:: server connect failed.");
         }
-
-        //채널을 FTP 용 채널 객체로 캐스팅
-        channelSftp = (ChannelSftp) channel;
     }
     /**
      * SFTP 접속해제
