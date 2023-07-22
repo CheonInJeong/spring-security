@@ -1,4 +1,4 @@
-package com.example.springsecurity.vo;
+package com.example.springsecurity.vo.member;
 
 import com.example.springsecurity.domain.common.Member;
 import lombok.*;

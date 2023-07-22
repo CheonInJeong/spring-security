@@ -1,11 +1,11 @@
-package com.example.springsecurity.vo.member;
+package com.example.springsecurity.dto.member;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class MemberLoginVO {
+public class MemberLoginRequest {
     private String memberId;
     private String password;
 }

@@ -2,9 +2,8 @@ package com.example.springsecurity.service.member;
 
 import com.example.springsecurity.domain.common.Member;
 import com.example.springsecurity.repository.member.MemberRepository;
-import com.example.springsecurity.vo.MemberVO;
+import com.example.springsecurity.vo.member.MemberVO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
